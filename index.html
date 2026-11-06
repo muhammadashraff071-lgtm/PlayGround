@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#07141b" />
+  <title>APEX RUN — Neon Coast GP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+  <script type="module" src="game.js"></script>
+</head>
+<body>
+  <main id="game">
+    <canvas id="scene"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">A</span><div><b>APEX<span>RUN</span></b><small>NEON COAST GRAND PRIX</small></div></div>
+      <div class="event"><span class="live-dot"></span> CIRCUIT RACE <i>•</i> EVENT 01</div>
+      <button class="sound-btn" id="soundBtn" aria-label="Toggle sound">♪ <span>SOUND ON</span></button>
+    </header>
+    <section class="race-hud" id="raceHud" aria-live="polite">
+      <div class="hud-left"><div class="position"><strong id="position">1</strong><span> / 4</span><small>POSITION</small></div><div class="lap"><small>LAP</small><strong id="lap">01</strong><span> / 03</span></div></div>
+      <div class="hud-center"><div class="race-time" id="raceTime">00:00.00</div><div class="time-label">RACE TIME</div></div>
+      <div class="hud-right"><div class="speed-wrap"><div class="speed"><strong id="speed">000</strong><span>KM/H</span></div><div class="speed-unit"><div class="rpm"><i id="rpmBar"></i></div><small>RPM</small></div></div><div class="boost"><div class="boost-label"><span>▰ NITRO</span><b id="boostText">100%</b></div><div class="boost-track"><i id="boostBar"></i></div><small>HOLD <kbd>SPACE</kbd> TO ENGAGE</small></div></div>
+    </section>
+    <div class="track-note" id="trackNote"><span>◈</span> NEON COAST <i>—</i> 2.4 KM</div>
+    <div class="countdown" id="countdown"></div>
+    <div class="toast" id="toast"></div>
+    <section class="overlay" id="menu">
+      <div class="menu-card">
+        <div class="eyebrow"><span></span> MIDNIGHT SERIES · ROUND 01</div>
+        <h1>CHASE<br><em>THE LINE.</em></h1>
+        <p>One coast. Three laps. No room to lift.</p>
+        <div class="menu-meta"><div><small>TRACK</small><b>NEON COAST</b></div><div><small>CONDITIONS</small><b>AFTER DARK <i>☾</i></b></div><div><small>RACE</small><b>3 LAPS · 4 DRIVERS</b></div></div>
+        <button class="start-btn" id="startBtn"><span>START RACE</span><b>↗</b></button>
+        <div class="controls-hint"><span>⌨</span> ARROWS / WASD TO STEER <i>·</i> W / ↑ ACCELERATE <i>·</i> SPACE NITRO</div>
+      </div>
+      <div class="menu-side"><span class="side-line"></span><b>01</b><span>THE NIGHT IS YOURS</span></div>
+    </section>
+    <div class="result" id="result" hidden><div class="result-box"><div class="eyebrow">NEON COAST · FINISH</div><div class="result-rank" id="resultRank">01</div><h2 id="resultTitle">PODIUM FINISH</h2><p id="resultCopy">The coast belongs to you.</p><div class="result-time" id="finalTime">00:00.00</div><button class="start-btn" id="againBtn"><span>RACE AGAIN</span><b>↻</b></button></div></div>
+    <div class="mobile-controls" id="mobileControls"><button data-control="left" aria-label="Steer left">‹</button><button data-control="right" aria-label="Steer right">›</button><button data-control="brake" aria-label="Brake">BRAKE</button><button data-control="accelerate" aria-label="Accelerate">GO</button><button data-control="boost" aria-label="Nitro">N₂O</button></div>
+    <footer><span>© APEX MOTORSPORT</span><span>BUILT FOR THE AFTERHOURS <b>✳</b></span></footer>
+  </main>
+</body>
+</html>
